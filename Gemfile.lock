@@ -43,6 +43,7 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    gravatar_image_tag (0.1.0)
     hike (1.2.1)
     i18n (0.6.1)
     journey (1.0.4)
@@ -121,6 +122,7 @@ PLATFORMS
 DEPENDENCIES
   annotate
   coffee-rails (~> 3.2.1)
+  gravatar_image_tag (= 0.1.0)
   jquery-rails
   rails (= 3.2.9)
   rspec-rails (= 2.0.1)
