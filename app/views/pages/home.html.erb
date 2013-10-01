@@ -4,5 +4,25 @@
 	<a href="http://www.aravity.com/">Aravity!</a> application.
 </p>
 
+<% i= $i %>
+<% images = Array.new %>
+<% @images.each do |item| %>
+	<% images << item %>
+<% end %>
+<% b = images[$i] %>
+
+<p><%=  image_tag(b, :alt => "Cannot display this image") %></p>
+
+
+<p>
+  <%= "filecount is:" + "#{$filecount}" %>
+  <%= "image is:" + b %>
+</p>
+
+<button type="submit" value="Next" form="submit_form">Like</button>
+<form id="submit_form">
+	<% change_i %>
+	
+</form>
 <%= link_to "Sign up now!", signup_path, :class => "signup_button round" %>
 

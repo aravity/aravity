@@ -1,0 +1,8 @@
+class ImagesController < ApplicationController
+
+  def show
+    @image = Image.new
+    @title = "image"
+  end
+
+end

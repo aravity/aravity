@@ -1,0 +1,5 @@
+class Image < ActiveRecord::Base
+  def image_path
+     "/system/assets/#{id}/original/#{filename}"
+  end
+end

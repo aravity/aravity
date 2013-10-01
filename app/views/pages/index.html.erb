@@ -1,2 +1,127 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Aravity</title>
+    
+<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<header>
+<section><h1>Recommendation by Aravity</h1>
+</section>
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+ </header> 
+
+<body>
+	<%= render 'layouts/stylesheets' %>
+<h2>Which core product are you looking for?</h2>
+<form id="cse-search-box" action="http://google.com/cse">
+  <input type="hidden" name="cx" value="YOUR SEARCH ENGINE ID goes here" />
+  <input type="hidden" name="ie" value="UTF-8" />
+  <input type="text" name="q" size="31" />
+  <input type="submit" name="sa" value="Search" />
+</form>
+<p>What are your associations?</p>
+</body>
+
+<div>
+        <ul>
+                <li>
+                	 <a href="#"><%=  image_tag("images/BlockBateauNeckSweater.jpg", :alt => "Cannot display this image") %></a>
+                   <!-->     <a href="#"><img src="/public/assets/images/BlockBateauNeckSweater.jpg" alt=""></a><!-->
+                </li>
+                <li>
+                	<a href="#"><%=  image_tag("images/PeplumTop.jpg", :alt => "Cannot display this image") %></a>
+       
+                </li>
+                <li>
+                	<a href="#"><%=  image_tag("images/Portofino.jpg", :alt => "Cannot display this image") %></a>
+                   
+                </li>
+        </ul>
+</div>
+<div class="middle">
+        <ul>
+                <li>
+                	<a href="#"><%=  image_tag("images/ColorBlockSatchel.jpg", :alt => "Cannot display this image") %></a>
+                </li>
+                
+                <li class="core">
+                	<% i= $i %>
+					<% images = Array.new %>
+					<% @images.each do |item| %>
+						<% images << item %>
+					<% end %>
+					<% b = images[$i] %>
+					
+                	<button type="submit" value="Next" form="submit_form">Like!</button>
+                	<button type="submit" value="Next" form="submit_form">Dislike!</button>	
+                	<form id="submit_form">
+						<% change_i %>
+					</form>
+					<a href="#"><%=  image_tag("images/"+b, :alt => "Cannot display this image") %></a>
+                </li>
+                <li>
+                	<a href="#"><%=  image_tag("images/MultiFunctionBracelet.jpg", :alt => "Cannot display this image") %></a>
+                </li>
+        </ul>
+</div>
+<div>
+  <ul>
+                <li>
+                	<a href="#"><%=  image_tag("images/OneBottonStudio Stretch.jpg", :alt => "Cannot display this image") %></a>
+                </li>
+                <li>
+                	<a href="#"><%=  image_tag("images/ZipperedPonteKnit.jpg", :alt => "Cannot display this image") %></a>
+                </li>
+                <li>
+                	<a href="#"><%=  image_tag("images/SeamedShorts.jpg", :alt => "Cannot display this image") %></a>
+
+                </li>
+  </ul>
+</div>
+
+
+<footer>
+<p>Filter by Emotions</p>
+<div class="smiles">
+  <ul>
+                 <li>
+                        <a href="#">&#128512</a>
+                </li>
+                 <li>
+                        <a href="#">&#128515</a>
+                </li>
+                  <li>
+                        <a href="#">&#128528</a>
+                </li>
+                                    <li>
+                        <a href="#">&#128542</a>
+                </li>
+                <li>
+                        <a href="#">&#128544</a>
+                </li>
+  </ul>
+</div>
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+</footer>
+
+<p>
+  <%= "filecount is:" + "#{$filecount}" %>
+  <%= "image is:" + b %>
+</p>
+</html>
